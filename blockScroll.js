@@ -4,7 +4,7 @@ let windowOffsetTop = 0;
 function blockScroll( state ) {
 	let b = $('body');
 
-	if ( state === true ) {
+	if ( state == true ) {
 		windowOffsetTop = $(window).scrollTop();
 
 		b.css({
