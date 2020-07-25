@@ -1,7 +1,7 @@
 # blockScroll
 
-To block scroll call:
-blockScroll(true);
+To block scroll:
+blockScroll();
 
-To unblock scroll call:
+To unblock scroll:
 blockScroll(false);
