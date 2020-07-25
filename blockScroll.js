@@ -1,23 +1,25 @@
-// Scroll block function
 let windowOffsetTop = 0;
 
-function blockScroll( state ) {
-	let b = $('body');
+function blockScroll(state = true) {
+    let targetBlock = document.querySelector('body');
 
-	if ( state == true ) {
-		windowOffsetTop = $(window).scrollTop();
+    if (state) {
+        windowOffsetTop = window.pageYOffset;
 
-		b.css({
-			position: 'fixed',
-			top: -windowOffsetTop + 'px',
-			right: 0,
-			bottom: 0,
-			left: 0,
-			overflowY: 'scroll'
-		});
-	} else {
-		b.removeAttr('style');
+        targetBlock.style.position = 'fixed';
+        targetBlock.style.overflow = 'scroll';
+        targetBlock.style.top = -windowOffsetTop + 'px';
+        targetBlock.style.right = '0';
+        targetBlock.style.bottom = '0';
+        targetBlock.style.left = '0';
+    } else {
+        targetBlock.style.position = null;
+        targetBlock.style.overflow = null;
+        targetBlock.style.top = null;
+        targetBlock.style.right = null;
+        targetBlock.style.bottom = null;
+        targetBlock.style.left = null;
 
-		window.scrollTo(0, windowOffsetTop);
-	}
+        window.scrollTo(0, windowOffsetTop);
+    }
 }
